@@ -11,10 +11,10 @@ SuperStyler is a CiviCRM extension which let you manage css files in CiviCRM. In
 - You can directly clone to your civiCRM extension directory using<br>
 ```$ git clone https://github.com/kewljuice/be.ctrl.superstyler.git```
 
-- You can also download a zip file from<br>
+- You can also download a zip file, and extract in your extension directory<br>
 ```$ git clone https://github.com/kewljuice/zip/master```
 
-- 
+- The next step is enabling the extension which can be done from "Administer -> Customize -> Manage CiviCRM Extensions".
 
 ## Configuration
 Muffin gummi bears tiramisu macaroon pudding tart. Tootsie roll toffee dragée jelly beans cookie toffee. Wafer biscuit bear claw cookie jujubes apple pie cake candy canes jelly beans. Candy lemon drops tootsie roll. Topping bear claw sesame snaps. Powder lemon drops sweet roll candy. Sugar plum powder dessert topping oat cake chocolate bar sweet. Biscuit candy cake candy cookie. Icing macaroon chocolate apple pie soufflé jelly. Apple pie cookie jelly beans tart apple pie lemon drops muffin soufflé. Cheesecake bear claw chupa chups chocolate caramels. Gummies chocolate bar cotton candy sugar plum bonbon marzipan. Jelly bear claw gummi bears.
