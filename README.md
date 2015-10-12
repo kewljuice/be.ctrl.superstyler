@@ -25,8 +25,10 @@ SuperStyler is a CiviCRM extension which let you manage css files in CiviCRM. In
 
 ## Configuration
 
-- The list of available stylesheets is available at [yoursite.org/civicrm/ctrl/superstyler]. There are 2 stylesheets included.
+- The list of available stylesheets is available at **yoursite.org/civicrm/ctrl/superstyler**. There are 2 stylesheets included.
 
 - To upload your own stylesheets place them within **css/** folder in the syperstyler extension directory. (only files with the .css file extension are allowed)
+
+- To see changes disable and then enable the extension.
 
 ***
