@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <extension key="be.ctrl.superstyler" type="module">
   <file>superstyler</file>
-  <name>Superstyler extension</name>
-  <description>Extra css for CiviCRM</description>
+  <name>CiviCRM Superstyler extension</name>
+  <description>Superstyler: Extra css for CiviCRM</description>
   <license>AGPL-3.0</license>
   <maintainer>
-    <author>ctrl.be</author>
+    <author>Hechtermans Wouter</author>
     <email>wouter@ctrl.be</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">http://www.ctrl.be/</url>
-    <url desc="Documentation">http://www.ctrl.be/</url>
+    <url desc="Main Extension Page">https://github.com/kewljuice/be.ctrl.superstyler</url>
+    <url desc="Documentation">https://github.com/kewljuice/be.ctrl.superstyler</url>
     <url desc="Support">http://www.ctrl.be/</url>
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
@@ -20,7 +20,7 @@
   <compatibility>
     <ver>4.2</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments></comments>
   <civix>
     <namespace>CRM/superstyler</namespace>
   </civix>
