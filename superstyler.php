@@ -48,20 +48,32 @@ function superstyler_civicrm_uninstall() {
 function superstyler_civicrm_enable() {
 	// log
 	watchdog('be.ctrl.superstyler', 'enabled superstyler');	
-	// create variables
+	// read css folder
 	$a = civicrm_api3('Setting', 'get', array('sequential' => 1, 'return' => "extensionsDir", ));
 	$d = scandir($a['values'][0]['extensionsDir']."\be.ctrl.superstyler\css");
-	$l = array('default');
-	$c = 'default';
+	// json object
+	$json = array();
+	$arr = array();
+	// default
+	$default = new stdClass();
+	$default->name = 'default';
+	$default->active = 1;
+	$arr[] = $default;
 	// read files in css folder
 	foreach($d as $f) {
+			// check for css
 			$i = pathinfo($f);
 			if($f == '.' || $f == '..' || $i['extension'] != "css") { continue; } 
-			$l[] = $f;
+			// create object
+			$ob = new stdClass();
+			$ob->name = $f;
+			$ob->active = 0;
+			$arr[] = $ob;
 	}
+	$json["superstyler"] = $arr;
+	$encode = json_encode($json);
 	// assign 
-	CRM_Core_BAO_Setting::setItem($c, 'superstyler', 'color');
-	CRM_Core_BAO_Setting::setItem($l, 'superstyler', 'list');
+	CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
 	// continue
   _superstyler_civix_civicrm_enable();
 }
@@ -75,7 +87,7 @@ function superstyler_civicrm_disable() {
 	// log
 	watchdog('be.ctrl.superstyler', 'disabled superstyler');	
 	// remove variables
-	/* TODO */
+	CRM_Core_BAO_Setting::setItem('', 'superstyler', 'settings');
   // continue
 	_superstyler_civix_civicrm_disable();
 }
@@ -134,9 +146,12 @@ function superstyler_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
  */
 function superstyler_setcss ($color) {
 	// http://stackoverflow.com/questions/26805741/storing-civicrm-extension-specific-configuration-in-database
-	$color 	= CRM_Core_BAO_Setting::getItem('superstyler', 'color');
-	// check
-	if(isset($color) && $color != 'default') { CRM_Core_Resources::singleton()->addStyleFile('be.ctrl.superstyler', 'css/'.$color); }
+	$settings	= CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
+	$decode = json_decode(utf8_decode($settings), true);
+	foreach ($decode['superstyler']as $key => $value) { 
+		// set active
+		if($value['active'] == 1 && $value['name'] != 'default') { CRM_Core_Resources::singleton()->addStyleFile('be.ctrl.superstyler', 'css/'. $value['name']); } 
+	}
 }
 
 /**
