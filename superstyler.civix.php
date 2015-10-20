@@ -170,7 +170,7 @@ function _superstyler_civix_civicrm_managed(&$entities) {
     $es = include $file;
     foreach ($es as $e) {
       if (empty($e['module'])) {
-        $e['module'] = 'be.ctrl.superstyler';
+        $e['module'] = 'be.2mpact.superstyler';
       }
       $entities[] = $e;
     }
@@ -199,7 +199,7 @@ function _superstyler_civix_civicrm_caseTypes(&$caseTypes) {
       // throw new CRM_Core_Exception($errorMessage);
     }
     $caseTypes[$name] = array(
-      'module' => 'be.ctrl.superstyler',
+      'module' => 'be.2mpact.superstyler',
       'name' => $name,
       'file' => $file,
     );
