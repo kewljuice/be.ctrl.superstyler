@@ -46,9 +46,11 @@ function superstyler_civicrm_uninstall() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
 function superstyler_civicrm_enable() {
-	// read css folder
-	$a = civicrm_api3('Setting', 'get', array('sequential' => 1, 'return' => "extensionsDir", ));
-	$d = scandir($a['values'][0]['extensionsDir']."\be.ctrl.superstyler\css");
+	// http://wiki.civicrm.org/confluence/display/CRMDOC/Extensions%3A+Referencing+Files
+	// $url =CRM_Core_Resources::singleton()->getUrl('be.ctrl.superstyler');
+	$u = dirname(__FILE__) . DIRECTORY_SEPARATOR . "css";
+	// read css folder	
+	$d = scandir($u);
 	// json object
 	$json = array();
 	$arr = array();
