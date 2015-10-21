@@ -31,8 +31,8 @@ class CRM_superstyler_Page_superstyler extends CRM_Core_Page {
 	// loop
 	foreach ($decode['superstyler']as $key => $value) { 
 		$v = $value['name']; 
-		if($value['active'] == 1) { $form .= "<input type='radio' id='css_$value' name='color' value='$v' checked><label for='css_$v' >$v</label><br>"; }
-		else { $form .= "<input type='radio' id='css_$value' name='color' value='$v'><label for='css_$v' >$v</label><br>"; }
+		if($value['active'] == 1) { $form .= "<input type='radio' id='css_$v' name='color' value='$v' checked><label for='css_$v' >$v</label><br>"; }
+		else { $form .= "<input type='radio' id='css_$v' name='color' value='$v'><label for='css_$v' >$v</label><br>"; }
 	}
 	$form .= "</div>";
 	$form .= "<div class='crm-submit-buttons'><span class='crm-button'><input class='crm-form-submit default' type='submit' value='Submit'></span></div>";
