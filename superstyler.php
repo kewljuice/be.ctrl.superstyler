@@ -46,8 +46,6 @@ function superstyler_civicrm_uninstall() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
 function superstyler_civicrm_enable() {
-	// log
-	watchdog('be.ctrl.superstyler', 'enabled superstyler');	
 	// read css folder
 	$a = civicrm_api3('Setting', 'get', array('sequential' => 1, 'return' => "extensionsDir", ));
 	$d = scandir($a['values'][0]['extensionsDir']."\be.ctrl.superstyler\css");
@@ -75,7 +73,7 @@ function superstyler_civicrm_enable() {
 	// assign 
 	CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
 	// continue
-  _superstyler_civix_civicrm_enable();
+  	_superstyler_civix_civicrm_enable();
 }
 
 /**
@@ -84,11 +82,9 @@ function superstyler_civicrm_enable() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
 function superstyler_civicrm_disable() {
-	// log
-	watchdog('be.ctrl.superstyler', 'disabled superstyler');	
 	// remove variables
 	CRM_Core_BAO_Setting::setItem('', 'superstyler', 'settings');
-  // continue
+  	// continue
 	_superstyler_civix_civicrm_disable();
 }
 
@@ -144,9 +140,9 @@ function superstyler_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
 /**
  * function set CSS
  */
-function superstyler_setcss ($color) {
+function superstyler_setcss () {
 	// http://stackoverflow.com/questions/26805741/storing-civicrm-extension-specific-configuration-in-database
-	$settings	= CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
+	$settings = CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
 	$decode = json_decode(utf8_decode($settings), true);
 	foreach ($decode['superstyler']as $key => $value) { 
 		// set active
