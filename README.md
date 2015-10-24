@@ -8,7 +8,7 @@ SuperStyler is a CiviCRM extension which let you manage css files in CiviCRM. In
 
 ## Installation
 
-- You can directly clone to your civiCRM extension directory using<br>
+- You can directly clone to your CiviCRM extension directory using<br>
 ```$ git clone https://github.com/kewljuice/be.ctrl.superstyler.git```
 
 - You can also download a zip file, and extract in your extension directory<br>
@@ -25,7 +25,7 @@ SuperStyler is a CiviCRM extension which let you manage css files in CiviCRM. In
 
 ## Configuration
 
-- The list of available stylesheets is available at "Administer -> CTRL -> SuperStyler" or **yoursite.org/civicrm/ctrl/superstyler**. 
+- The list of available stylesheets is available at ```"Administer -> CTRL -> SuperStyler"``` or **yoursite.org/civicrm/ctrl/superstyler**. 
 
 - There are 2 stylesheets included.
 
