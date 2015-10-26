@@ -22,6 +22,8 @@ class CRM_superstyler_Page_superstyler extends CRM_Core_Page {
 		// set
 		$encode = json_encode($decode);
 		CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
+		// notice
+		CRM_Core_Session::setStatus(ts('Superstyler settings changed'), ts('Saved'), 'success');
 	}
 	// form
 	$form = "";
