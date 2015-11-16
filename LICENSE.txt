@@ -1,4 +1,4 @@
-Package: be.2mpact.compsy
+Package: be.ctrl
 Copyright (C) 2015, kewljuice <kewljuice@hotmail.com>
 Licensed under the GNU Affero Public License 3.0 (below).
 
