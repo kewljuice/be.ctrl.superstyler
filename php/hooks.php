@@ -1,13 +1,12 @@
 <?php
-
 /**
  * CiviCRM hooks
  */
-
 function superstyler_civicrm_navigationMenu(&$params) {
 	//  Get the maximum key of $params.
  	$nextKey = ( max(array_keys($params)) );
 	// Check for Administer navID.
+	$AdministerKey = '';
 	foreach($params as $k => $v) {
 	  if($v['attributes']['name'] == 'Administer') { $AdministerKey = $v['attributes']['navID']; }	
 	}
@@ -37,19 +36,18 @@ function superstyler_civicrm_navigationMenu(&$params) {
 	}
 	// Create child(s) array
 	$child = array(
-				'attributes' => array(	
-				  'label' => 'SuperStyler', 
-				  'name' => 'ctrl_superstyler',
-				  'url' => 'civicrm/ctrl/superstyler',
-				  'permission' => 'access CiviCRM',
-				  'operator' => null,
-				  'separator' => 0,
-				  'parentID' => $parentKey,
-				  'navID' => $nextKey,
-				  'active' => 1 ),
+				'attributes' => array(
+                    'label' => 'SuperStyler',
+				    'name' => 'ctrl_superstyler',
+				    'url' => 'civicrm/ctrl/superstyler',
+				    'permission' => 'access CiviCRM',
+				    'operator' => null,
+				    'separator' => 0,
+				    'parentID' => $parentKey,
+				    'navID' => $nextKey,
+				    'active' => 1 ),
 				'child' => null );
 	// Add child(s) for this extension
 	$params[$AdministerKey]['child'][$parentKey]['child'][$nextKey]  = $child;
 }
-
 ?>

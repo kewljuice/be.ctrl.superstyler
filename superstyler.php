@@ -47,9 +47,9 @@ function superstyler_civicrm_uninstall() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
 function superstyler_civicrm_enable() {
-	// http://wiki.civicrm.org/confluence/display/CRMDOC/Extensions%3A+Referencing+Files
+    // http://wiki.civicrm.org/confluence/display/CRMDOC/Extensions%3A+Referencing+Files
 	// $url =CRM_Core_Resources::singleton()->getUrl('be.ctrl.superstyler');
-	$u = dirname(__FILE__) . DIRECTORY_SEPARATOR . "css";
+	$u = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'css';
 	// read css folder	
 	$d = scandir($u);
 	// json object
@@ -62,16 +62,16 @@ function superstyler_civicrm_enable() {
 	$arr[] = $default;
 	// read files in css folder
 	foreach($d as $f) {
-			// check for css
-			$i = pathinfo($f);
-			if($f == '.' || $f == '..' || $i['extension'] != "css") { continue; } 
-			// create object
-			$ob = new stdClass();
-			$ob->name = $f;
-			$ob->active = 0;
-			$arr[] = $ob;
+		// check for css
+		$i = pathinfo($f);
+		if($f == '.' || $f == '..' || $i['extension'] != 'css') { continue; }
+		// create object
+		$ob = new stdClass();
+		$ob->name = $f;
+		$ob->active = 0;
+		$arr[] = $ob;
 	}
-	$json["superstyler"] = $arr;
+	$json['superstyler'] = $arr;
 	$encode = json_encode($json);
 	// assign 
 	CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
@@ -85,7 +85,7 @@ function superstyler_civicrm_enable() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
 function superstyler_civicrm_disable() {
-	// remove variables
+	// remove variable(s)
 	CRM_Core_BAO_Setting::setItem('', 'superstyler', 'settings');
   	// continue
 	_superstyler_civix_civicrm_disable();

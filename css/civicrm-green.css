@@ -2,6 +2,7 @@
 * CIVICRM CSS
 * Green
 */
+
 html body.page-civicrm {
 	margin-top: 0 !important;
 	padding-top: 29px !important;
@@ -29,7 +30,7 @@ html body.page-civicrm {
 }
 
 #civicrm-menu #crm-qsearch #quickSearch div {
-	height: 0px !important;
+	height: 0 !important;
 	background-color: #7fc858 !important;
 }
 
