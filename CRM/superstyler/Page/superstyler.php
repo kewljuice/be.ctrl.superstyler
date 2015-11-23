@@ -7,7 +7,7 @@ class CRM_superstyler_Page_superstyler extends CRM_Core_Page {
       // title
 	  CRM_Utils_System::setTitle(ts('SuperStyler'));
       // variables
-      $url = CRM_Utils_System::url() . 'civicrm/ctrl/superstyler';
+      $url = CRM_Utils_System::baseURL() . 'civicrm/ctrl/superstyler';
       $this->assign('url', $url);
       // get settings
       $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
