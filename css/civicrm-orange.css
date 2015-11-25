@@ -3,84 +3,84 @@
 * Orange
 */
 html body.page-civicrm {
-	margin-top: 0 !important;
-	padding-top: 29px !important;
+    margin-top: 0 !important;
+    padding-top: 29px !important;
 }
 
 #civicrm-menu {
-	background-color: #F3AB26;
-	height: 29px;
-	position: fixed;
-	border-bottom: 2px solid #A6710D;
+    background-color: #F3AB26;
+    height: 29px;
+    position: fixed;
+    border-bottom: 2px solid #A6710D;
 }
-	
+
 #civicrm-menu #crm-qsearch {
-	border-right: none;
-	background-color: #F3AB26 !important;
-	height: 29px !important;
+    border-right: none;
+    background-color: #F3AB26 !important;
+    height: 29px !important;
 }
 
 #civicrm-menu #crm-qsearch.activetarget {
-	background-color: #F3AB26 !important;
-	height: 29px !important;
+    background-color: #F3AB26 !important;
+    height: 29px !important;
 }
 
 #civicrm-menu #crm-qsearch input.form-text {
-	height: 20px;
-	border-color:#2681F3;
+    height: 20px;
+    border-color: #2681F3;
 }
 
 #civicrm-menu #crm-qsearch #quickSearch div {
-	height: 0px !important;
-	background-color: #F3AB26 !important;
+    height: 0px !important;
+    background-color: #F3AB26 !important;
 }
 
 #civicrm-menu li.menumain {
-	font-weight: bolder;
-	height: 29px !important;
-	color: #fff;
-	height: 100%;
-	height: auto;
-	border-color:#A6710D;
-	box-shadow: 1px 0px 0 #FFBC41;
+    font-weight: bolder;
+    height: 29px !important;
+    color: #fff;
+    height: 100%;
+    height: auto;
+    border-color: #A6710D;
+    box-shadow: 1px 0px 0 #FFBC41;
 }
 
-#civicrm-menu .activetarget	{
-	background-color: #2681F3;
+#civicrm-menu .activetarget {
+    background-color: #2681F3;
 }
 
 #civicrm-menu #menu-logout {
-	background-color: #2681F3;
+    background-color: #2681F3;
 }
-	
+
 #civicrm-menu #menu-logout:hover {
-	text-decoration: underline;
-}	
+    text-decoration: underline;
+}
 
 .crm-quickSearchField {
-	color: #fff;
+    color: #fff;
 }
 
-html>body div.outerbox {
-	margin-top: 0 !important;
+html > body div.outerbox {
+    margin-top: 0 !important;
 }
 
 #root-menu-div ul {
-	background-color: #2681F3;
-	border-color:#004AA6;
-	border-top-width:2px;
-	box-shadow:inset 0px 0px 1px #3d95fc;
+    background-color: #2681F3;
+    border-color: #004AA6;
+    border-top-width: 2px;
+    box-shadow: inset 0px 0px 1px #3d95fc;
 }
 
-#root-menu-div li.menu-separator{
-		border-color:#004AA6;
-		box-shadow: 0px 1px 0px #3d95fc;
-	}
+#root-menu-div li.menu-separator {
+    border-color: #004AA6;
+    box-shadow: 0px 1px 0px #3d95fc;
+}
 
 #root-menu-div ul li.active {
-	background-color: #F3AB26;
-}	
+    background-color: #F3AB26;
+}
 
 #civicrm-menu li span {
-	color: #fff;
+    color: #fff;
 }
