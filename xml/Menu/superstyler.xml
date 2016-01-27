@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <menu>
-  <item>
-    <path>civicrm/ctrl/superstyler</path>
-    <page_callback>CRM_superstyler_Page_superstyler</page_callback>
-    <title>superstyler</title>
-    <access_arguments>access CiviCRM</access_arguments>
-  </item>
+    <item>
+        <path>civicrm/ctrl/superstyler</path>
+        <page_callback>CRM_superstyler_Page_superstyler</page_callback>
+        <title>superstyler</title>
+        <access_arguments>access CiviCRM</access_arguments>
+    </item>
 </menu>

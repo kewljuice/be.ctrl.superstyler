@@ -154,10 +154,10 @@ function superstyler_civicrm_alterSettingsFolders(&$metaDataFolders = NULL)
 
 /**
  * function set CSS
+ * http://stackoverflow.com/questions/26805741/storing-civicrm-extension-specific-configuration-in-database
  */
 function superstyler_setcss()
 {
-    // http://stackoverflow.com/questions/26805741/storing-civicrm-extension-specific-configuration-in-database
     $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
     $decode = json_decode(utf8_decode($settings), true);
     foreach ($decode['superstyler'] as $key => $value) {
@@ -173,7 +173,7 @@ function superstyler_setcss()
  */
 function superstyler_civicrm_buildForm($formName, &$form)
 {
-    // set style
+    // Execute stylecss function.
     superstyler_setcss();
 }
 
@@ -182,9 +182,18 @@ function superstyler_civicrm_buildForm($formName, &$form)
  */
 function superstyler_civicrm_pageRun(&$page)
 {
-    // set style
+    // Execute stylecss function.
     superstyler_setcss();
 }
 
-
- 
+/**
+ * @param $angularModule
+ * https://github.com/civicrm/civicrm-core/tree/master/tools/extensions/org.civicrm.angularex
+ */
+function superstyler_civicrm_angularModules(&$angularModule) {
+    $angularModule['uploadModule'] = array(
+      'ext' => 'be.ctrl.superstyler',
+      'js' => array('js/upload.js'),
+      'partials' => array('partials'),
+    );
+}
