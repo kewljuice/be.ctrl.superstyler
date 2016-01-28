@@ -9,7 +9,29 @@
         </tr>
         <tr>
             <td>
-                {{ts('Module: %1', {1: name})}}
+                <!-- fileupload -->
+                <div class="fileupload">
+                    <!-- alert -->
+                    <div class="alert" ng-show="Form.file.loader">
+                        <span class="loader" translate>Loading</span>
+                    </div>
+
+                    <!-- label -->
+                    <label for="file" translate>Choose css file</label>
+
+                    <!-- file -->
+                    <input type="file" id="file" name="file" ng-model="Form.files" file-input="Form.files" required>
+
+                    <!-- button -->
+                    <button class="button" ng-click="uploadFile(Form.files, Form.file={error:'',loader:true,url:'',name:''})" translate>Upload</button>
+
+                    <!-- alert-->
+                    <div class="alert" ng-if="Form.file1.error" ng-bind-html="renderHtml(Form.file.error)"></div>
+
+                </div>
+                <pre style="">
+                    model: {{ Form.file }}
+                </pre>
             </td>
         </tr>
     </table>
