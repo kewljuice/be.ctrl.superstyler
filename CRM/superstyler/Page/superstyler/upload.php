@@ -9,7 +9,8 @@ class CRM_superstyler_Page_superstyler_upload extends CRM_Core_Page {
     $json = array('is_error' => 1);
 
     // Handle file upload.
-
+    $url = CRM_Utils_System::baseURL();
+    $json['url'] = $url;
 
     // Dump JSON.
     print json_encode($json, JSON_PRETTY_PRINT);

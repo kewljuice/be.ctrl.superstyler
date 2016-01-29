@@ -4,13 +4,15 @@
 
 (function (angular, $, _) {
 
+    // Resource url
     var resourceUrl = CRM.resourceUrls['be.ctrl.superstyler'];
-    var baseUrl = CRM.config.userFramework;
 
-    //console.log(resourceUrl);
-    //console.log(baseUrl);
-    //console.log(CRM.config.entityRef);
+    // Custom extension urls
+    /* http://wiki.civicrm.org/confluence/display/CRMDOC/Cheatsheet */
+    var returnUrl = CRM.url('civicrm/ctrl/superstyler');
+    var uploadUrl = CRM.url('civicrm/ctrl/superstyler/upload');
 
+    // Angular module
     var angMod = angular.module('uploadModule', ['ngRoute', 'crmResource']);
 
     angMod.config(['$routeProvider',
@@ -31,27 +33,21 @@
                     // file input
                     $parse(attrs.fileInput).assign(scope, elm[0].files);
                     scope.$apply();
-                    // file validation
                 });
             }
         };
     }]);
 
     angMod.controller('uploadModuleCtrl', function ($scope, $http) {
-        // Variables
-        $scope.name = 'be.ctrl.superstyler';
-        $scope.url = '';
 
-        // Log
-        //console.log("hello world!");
-        //console.log(angular);
+        // Variabels
+        $scope.url = returnUrl;
 
         // Functions
         $scope.uploadFile = function ($files, $object) {
-            // Function upload!!
-            console.log("uploadFile function called" + $files);
-
             if ($files) {
+                // Log: Function upload!!
+                console.log("uploadFile: " + $files);
                 // default settings
                 $object.error = $object.url = $object.name = '';
                 $object.loader = true;
@@ -60,7 +56,7 @@
                 angular.forEach($files, function (file) {
                     fd.append('fileToUpload', file);
                 });
-                $http.post("/civicrm/ctrl/superstyler/upload", fd, {transformRequest:angular.identity, headers:{'Content-Type':undefined}})
+                $http.post(uploadUrl, fd, {transformRequest: angular.identity, headers: {'Content-Type': undefined}})
                     .success(function (response) {
                         if (response.is_error === 0) {
                             // save Activity
@@ -68,18 +64,13 @@
                             $object.loader = true;
                         } else {
                             // error
-                            $object.error = response.status;
+                            $object.error = "UploadFile error: " + response.status;
                             $object.loader = false;
                         }
                     });
             }
             // apply changes to scope
             $scope.$apply;
-        };
-
-        // renderHtml
-        $scope.renderHtml = function (html_code) {
-            return $sce.trustAsHtml(html_code);
         };
 
         // Translation
