@@ -26,11 +26,11 @@
                     <button class="button" ng-click="uploadFile(Form.files, Form.file={error:'',loader:true,url:'',name:''})" translate>Upload</button>
 
                     <!-- alert-->
-                    <div class="alert">{{ Form.file.error }}</div>
+                    <div class="alert">{{ Form.file.result.status }}</div>
 
                 </div>
                 model:
-                <pre>{{ Form.file }}</pre>
+                <pre>{{ Form.file.result }}</pre>
             </td>
         </tr>
     </table>

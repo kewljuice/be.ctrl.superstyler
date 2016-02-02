@@ -60,11 +60,11 @@
                     .success(function (response) {
                         if (response.is_error === 0) {
                             // save Activity
-                            $object.error = "UploadFile succes";
+                            $object.result = response;
                             $object.loader = true;
                         } else {
                             // error
-                            $object.error = "UploadFile error: " + response.status;
+                            $object.result = response;
                             $object.loader = false;
                         }
                     });
