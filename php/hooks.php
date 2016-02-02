@@ -10,7 +10,7 @@ function superstyler_civicrm_navigationMenu(&$params)
     $AdministerKey = '';
     foreach ($params as $k => $v) {
         if ($v['attributes']['name'] == 'Administer') {
-            $AdministerKey = $v['attributes']['navID'];
+            $AdministerKey = $k;
         }
     }
     // Check for Parent navID.
@@ -55,5 +55,4 @@ function superstyler_civicrm_navigationMenu(&$params)
     // Add child(s) for this extension
     $params[$AdministerKey]['child'][$parentKey]['child'][$nextKey] = $child;
 }
-
 ?>
