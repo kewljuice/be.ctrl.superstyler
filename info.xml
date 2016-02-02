@@ -23,6 +23,6 @@
   </compatibility>
   <comments></comments>
   <civix>
-    <namespace>CRM/superstyler</namespace>
+    <namespace>CRM/ctrl/superstyler</namespace>
   </civix>
 </extension>
