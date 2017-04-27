@@ -12,7 +12,7 @@ class CRM_superstyler_Page_superstyler extends CRM_Core_Page
         $url = CRM_Utils_System::baseURL() . 'civicrm/ctrl/superstyler';
         $this->assign('url', $url);
         // get settings
-        $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
+        $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'superstyler-settings');
         $decode = json_decode(utf8_decode($settings), true);
         // on form action
         if (isset($_REQUEST['color'])) {
@@ -26,7 +26,7 @@ class CRM_superstyler_Page_superstyler extends CRM_Core_Page
             }
             // set
             $encode = json_encode($decode);
-            CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
+            CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'superstyler-settings');
             // notice
             CRM_Core_Session::setStatus(ts('Superstyler settings changed'), ts('Saved'), 'success');
         }

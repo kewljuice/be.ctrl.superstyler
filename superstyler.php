@@ -81,7 +81,7 @@ function superstyler_civicrm_enable()
     $json['superstyler'] = $arr;
     $encode = json_encode($json);
     // assign
-    CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'settings');
+    CRM_Core_BAO_Setting::setItem($encode, 'superstyler', 'superstyler-settings');
     // continue
     _superstyler_civix_civicrm_enable();
 }
@@ -94,7 +94,7 @@ function superstyler_civicrm_enable()
 function superstyler_civicrm_disable()
 {
     // remove variable(s)
-    CRM_Core_BAO_Setting::setItem('', 'superstyler', 'settings');
+    CRM_Core_BAO_Setting::setItem('', 'superstyler', 'superstyler-settings');
     // continue
     _superstyler_civix_civicrm_disable();
 }
@@ -158,7 +158,7 @@ function superstyler_civicrm_alterSettingsFolders(&$metaDataFolders = NULL)
 function superstyler_setcss()
 {
     // http://stackoverflow.com/questions/26805741/storing-civicrm-extension-specific-configuration-in-database
-    $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'settings');
+    $settings = CRM_Core_BAO_Setting::getItem('superstyler', 'superstyler-settings');
     $decode = json_decode(utf8_decode($settings), true);
     foreach ($decode['superstyler'] as $key => $value) {
         // set active
