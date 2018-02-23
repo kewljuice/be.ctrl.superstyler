@@ -2,7 +2,7 @@
 <menu>
   <item>
     <path>civicrm/ctrl/superstyler</path>
-    <page_callback>CRM_superstyler_Page_superstyler</page_callback>
+    <page_callback>CRM_SuperStyler_Page_SuperStyler</page_callback>
     <title>superstyler</title>
     <access_arguments>access CiviCRM</access_arguments>
   </item>

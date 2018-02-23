@@ -21,9 +21,10 @@
     <ver>4.4</ver>
     <ver>4.5</ver>
     <ver>4.6</ver>
+    <ver>4.7</ver>
   </compatibility>
-  <comments></comments>
+  <comments>Follow README.md</comments>
   <civix>
-    <namespace>CRM/superstyler</namespace>
+    <namespace>CRM/ctrl/superstyler</namespace>
   </civix>
 </extension>
